@@ -3,6 +3,7 @@ package it.unibo.nestedenum;
 import java.util.Comparator;
 import java.util.Objects;
 
+
 /**
  * Implementation of {@link MonthSorter}.
  */
@@ -30,22 +31,18 @@ public final class MonthSorterNested implements MonthSorter {
 
         static Month fromString(String s){
             Objects.requireNonNull(s);
-            s.toUpperCase();
-            char character;
-            Month match = null;
             try {
                 return valueOf(s);
             } catch (IllegalArgumentException exc){
+                Month match = null;
                 for (final Month month: values()) {
-                    character = month.toString().charAt(0);
-                    if(s.startsWith(String.valueOf(character))){
-                        if(match == null){
-                            match = month;
-                        }
-                        else{
+                    if(month.toString().startsWith(s.toUpperCase())){
+                        if(match != null){
                             throw new IllegalArgumentException(
                                 s + " is ambiguous: both " + match + " and " + month + " would be valid matches", exc);
+                            
                         }
+                        match = month;
                     }
                 }
                 if (match == null) {
@@ -66,7 +63,6 @@ public final class MonthSorterNested implements MonthSorter {
     }
 
     private static class SortByMonthOrder implements Comparator<String> {
-
         @Override
         public int compare(String arg0, String arg1) {
             return Month.fromString(arg0).compareTo(Month.fromString(arg1));
