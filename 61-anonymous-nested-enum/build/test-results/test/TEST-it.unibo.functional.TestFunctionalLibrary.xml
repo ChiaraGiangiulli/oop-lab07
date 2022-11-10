@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.unibo.functional.TestFunctionalLibrary" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-11-10T17:51:43" hostname="LAPTOP-6OQ397AE" time="0.006">
+  <properties/>
+  <testcase name="testFlatten()" classname="it.unibo.functional.TestFunctionalLibrary" time="0.002"/>
+  <testcase name="testSelectAndReject()" classname="it.unibo.functional.TestFunctionalLibrary" time="0.001"/>
+  <testcase name="testTransform()" classname="it.unibo.functional.TestFunctionalLibrary" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
